@@ -17,24 +17,24 @@ public class Reposit {
         return DTOList;
     }
 
-    public DTO delete(String id){
-        for (DTO dto : DTOList){
-            if(Integer.parseInt(id)==dto.getId()){
+    public DTO delete(String id) {
+        for (DTO dto : DTOList) {
+            if (Integer.parseInt(id) == dto.getId()) {
                 DTOList.remove(dto);
                 return dto;
             }
         }
         return null;
     }
-    public DTO login(String email, String passwd){
-        for (DTO dto : DTOList){
-            if (email.equals(dto.getEmail())){
-                if (passwd.equals(dto.getPasswd())){
-                    return dto;
-                }
+
+    public DTO login(String email, String passwd) {
+        for (DTO dto : DTOList) {
+            if (email.equals(dto.getEmail()) &&
+                    passwd.equals(dto.getPasswd())) {
+                return dto;
+
             }
         }
-
         return null;
     }
 

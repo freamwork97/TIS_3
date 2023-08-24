@@ -19,7 +19,7 @@ public class Main {
 //            } else {
 //                System.out.println("1.회원목록조회 2.회원정보수정 3.회원삭제 4.로그아웃");
 //            }
-            System.out.println("1.회원가입 2.로그인 3.회원목록조회 4.회원정보수정");
+            System.out.println("1.회원가입 2.로그인 3.회원목록 4.회원수정");
             System.out.println("5.회원탈퇴 6.로그아웃 0. 종료");
             System.out.println("=================================");
             System.out.print("선택 : ");
