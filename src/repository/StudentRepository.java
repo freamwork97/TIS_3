@@ -14,7 +14,7 @@ public class StudentRepository {
         // id 값을 하나로 증가시켜 함께 저장
         // 현재 리스트에 저장된 학생수 가져오고 1증가
         int size = studentDTOList.size();
-        sdto.setId((long) size + 1);
+        sdto.setId((long) size + 1);  //long=
 //      신규 학생 리스트에 추가
         return studentDTOList.add(sdto);
 
@@ -24,14 +24,24 @@ public class StudentRepository {
         return studentDTOList;
     }
 
-    public List<StudentDTO> findById(String inputid) {
-        Long id = Long.parseLong(inputid);
+    public StudentDTO findById(String id) {
         for (StudentDTO sdto : studentDTOList) {
-            if (id.equals(sdto.getId())) {
-                findAll();
+            if (Long.parseLong(id) == sdto.getId()) {
+                return sdto;
             }
         }
-        return studentDTOList;
+//      반복문을 돌려서 일치하는 결과 없으면 null리턴
+        return null;
     }
 
+    public StudentDTO deleteId(String id) {
+        for (StudentDTO sdto : studentDTOList) {
+            if (Long.parseLong(id) == sdto.getId()) {
+                studentDTOList.remove(sdto);
+                return sdto;
+            }
+        }
+        return null;
+
+    }
 }

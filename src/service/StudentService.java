@@ -53,11 +53,63 @@ public class StudentService {
             System.out.println(sdto.toString());
         }
     }
-    public  void findById(){
-        StudentDTO sdto = new StudentDTO();
+
+    public void findById() {
+
+        System.out.println("StudentService.findById");
+//      조회기능 선택시 목록을 먼저 보여줌
+//      서비스클래스에서 정의한 findAll() 메서드 호출
+        for (StudentDTO sdto : studentRepository.findAll()) {
+            System.out.println(sdto.toString());
+        }
+//      조회할 id 입력
         System.out.print("조회할 ID : ");
         String id = sc.next();
-        studentRepository.findById(id);
-        System.out.println(sdto.toString());
+//      입력받은 id를 repository로 넘겨서 DTO 객체를 리턴받음
+        StudentDTO sdto = studentRepository.findById(id);
+//      조회결과 출력
+        if (sdto == null) {
+            System.out.println("찾는 정보 X");
+        } else {
+            System.out.println("조회학생 정보 : " + sdto);
+        }
+    }
+
+    public void deleteId() {
+        System.out.print("삭제할 ID : ");
+        String id = sc.next();
+        StudentDTO sdto = studentRepository.deleteId(id);
+        if (sdto == null) {
+            System.out.println("찾는 정보 X");
+        } else {
+            System.out.println("삭제학생 정보 : " + sdto);
+        }
+    }
+
+    public void update() {
+        System.out.print("수정할 ID : ");
+        String id = sc.next();
+        StudentDTO sdto = studentRepository.findById(id);
+
+        if(sdto==null){
+            System.out.println("찾는 정보x");
+        }
+        else{
+            System.out.print("이름 : ");
+            String studentName = sc.next();
+            System.out.print("학과 : ");
+            String studentMajor = sc.next();
+            System.out.print("전화 : ");
+            String studentMobile = sc.next();
+
+            sdto.setStudentName(studentName);
+            sdto.setStudentMajor(studentMajor);
+            sdto.setStudentMobile(studentMobile);
+
+            System.out.println("수정정보 : "+sdto);
+        }
+
+
+
     }
 }

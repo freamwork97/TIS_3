@@ -37,8 +37,10 @@ public class MainClass {
                 studentService.findAll();
             } else if (menu.equals("4")) {
                 System.out.println("정보수정");
+                studentService.update();
             } else if (menu.equals("5")) {
                 System.out.println("삭제");
+                studentService.deleteId();
             } else if (menu.equals("0")) {
                 run = false;
                 System.out.println("종료");
