@@ -31,7 +31,7 @@ public class MainClass {
                      - 리턴 받은 값 출력
                  */
                 System.out.println("학생조회");
-                studentService.findById();
+                studentService.findById()
             } else if (menu.equals("3")) {
                 System.out.println("학생목록");
                 studentService.findAll();
