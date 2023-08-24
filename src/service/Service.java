@@ -44,7 +44,7 @@ public class Service {
         if (dto == null) {
             System.out.println("찾는 정보 X");
         } else {
-            System.out.println("삭제학생 정보 : " + dto);
+            System.out.println("삭제학생 정보 : " + dto)
         }
     }
     public void login(){
