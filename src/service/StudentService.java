@@ -24,10 +24,12 @@ public class StudentService {
         System.out.print("전화 : ");
         String studentMobile = sc.next();
 //      DTO 객체
-        StudentDTO sdto = new StudentDTO();
-        sdto.setStudentName(studentName);
-        sdto.setStudentMajor(studentMajor);
-        sdto.setStudentMobile(studentMobile);
+//        StudentDTO sdto = new StudentDTO();
+//        sdto.setStudentName(studentName);
+//        sdto.setStudentMajor(studentMajor);
+//        sdto.setStudentMobile(studentMobile);
+
+        StudentDTO sdto = new StudentDTO(studentName,studentMajor,studentMobile);
 
 //      DTO 객체를 StudentRepository의 save() 메서드로 전달하여 리턴을 boolean으로 받음
         boolean result = studentRepository.save(sdto);
@@ -86,7 +88,13 @@ public class StudentService {
         }
     }
 
+
+
     public void update() {
+//      수정할 id를 입력받은 뒤 해당 정보고 있으면
+//      수정할 전화번호를 입력받고
+//      해당 정보가 없으면 없다는 출력을 하고
+//      메인메뉴ㅠㅠ.ㅇ
         System.out.print("수정할 ID : ");
         String id = sc.next();
         StudentDTO sdto = studentRepository.findById(id);
@@ -96,15 +104,13 @@ public class StudentService {
         }
         else{
             System.out.print("이름 : ");
-            String studentName = sc.next();
+            String updateName = sc.next();
             System.out.print("학과 : ");
-            String studentMajor = sc.next();
+            String updateMajor = sc.next();
             System.out.print("전화 : ");
-            String studentMobile = sc.next();
+            String updateMobile = sc.next();
 
-            sdto.setStudentName(studentName);
-            sdto.setStudentMajor(studentMajor);
-            sdto.setStudentMobile(studentMobile);
+            studentRepository.update(id,updateName,updateMajor,updateMobile);
 
             System.out.println("수정정보 : "+sdto);
         }

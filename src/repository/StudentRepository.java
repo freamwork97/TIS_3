@@ -13,8 +13,8 @@ public class StudentRepository {
     public Boolean save(StudentDTO sdto) {
         // id 값을 하나로 증가시켜 함께 저장
         // 현재 리스트에 저장된 학생수 가져오고 1증가
-        int size = studentDTOList.size();
-        sdto.setId((long) size + 1);  //long=
+//        int size = studentDTOList.size();
+//        sdto.setId((long) size + 1);  //long=
 //      신규 학생 리스트에 추가
         return studentDTOList.add(sdto);
 
@@ -44,4 +44,14 @@ public class StudentRepository {
         return null;
 
     }
+    public void update(String id, String updateName, String updateMajor, String updateMobile) {
+        for (StudentDTO sdto : studentDTOList) {
+            if (Long.parseLong(id)  == sdto.getId()) {
+                sdto.setStudentName(updateName);
+                sdto.setStudentMajor(updateMajor);
+                sdto.setStudentMobile(updateMobile);
+            }
+        }
+    }
+
 }

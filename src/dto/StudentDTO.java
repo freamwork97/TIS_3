@@ -5,13 +5,17 @@ public class StudentDTO {
     private String studentName;
     private String studentMajor;
     private String studentMobile;
-    public String getStudentName() {
-        return studentName;
-    }
-
+//  증가값을 유지하기 위해 static 선언
+    private static long num = 1L;
+//  기본생성자
     public StudentDTO() {
     }
-
+    public StudentDTO(String studentName, String studentMajor, String studentMobile) {
+        this.id = num++;
+        this.studentName = studentName;
+        this.studentMajor = studentMajor;
+        this.studentMobile = studentMobile;
+    }
     public Long getId() {
         return id;
     }
@@ -19,6 +23,10 @@ public class StudentDTO {
     public void setId(Long id) {
         this.id = id;
     }
+    public String getStudentName() {
+        return studentName;
+    }
+
 
     public void setStudentName(String studentName) {
         this.studentName = studentName;
