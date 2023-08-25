@@ -17,9 +17,9 @@ public class Reposit {
         return DTOList;
     }
 
-    public DTO delete(String id) {
+    public DTO delete(String passwd) {
         for (DTO dto : DTOList) {
-            if (Integer.parseInt(id) == dto.getId()) {
+            if (passwd.equals(dto.getPasswd())) {
                 DTOList.remove(dto);
                 return dto;
             }
@@ -38,4 +38,21 @@ public class Reposit {
         return null;
     }
 
+    public DTO update(String passwd) {
+        for (DTO dto:DTOList){
+            if(passwd.equals(dto.getPasswd())){
+                return dto;
+            }
+        }
+        return null;
+    }
+
+    public boolean check(String email) {
+        for (DTO dto: DTOList){
+            if(email.equals(dto.getEmail())){
+                return false;
+            }
+        }
+        return true;
+    }
 }

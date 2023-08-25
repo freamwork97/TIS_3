@@ -43,11 +43,11 @@ public class Main {
                 service.findAll();
             } else if (menu.equals("4")) {
                 System.out.println("회원목록수정");
+                service.update();
             } else if (menu.equals("5")) {
                 System.out.println("회원탈퇴");
                 service.delete();
             } else if (menu.equals("6")) {
-                System.out.println("로그아웃");
                 service.logout();
             } else if (menu.equals("0")) {
                 run = false;
