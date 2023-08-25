@@ -26,10 +26,10 @@ public class Main {
                 System.out.println("로그인");
                 service.login();
             } else if (menu.equals("3")) {
-                System.out.println("회원목록조회");
+                System.out.println("회원조회");
                 service.findAll();
             } else if (menu.equals("4")) {
-                System.out.println("회원목록수정");
+                System.out.println("회원수정");
                 service.update();
             } else if (menu.equals("5")) {
                 System.out.println("회원탈퇴");
