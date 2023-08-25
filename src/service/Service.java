@@ -3,7 +3,6 @@ package service;
 import dto.DTO;
 import reposit.Reposit;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Service {
