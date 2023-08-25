@@ -1,17 +1,43 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+package main;
+
+
+import service.Service;
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
+        Service service = new Service();
+        boolean run = true;
+        while (run) {
+            System.out.println("=======================게시판=======================");
+            System.out.println("1.글작성 2.글목록 3.글수정 4.글삭제 5.검색 0.종료");
+            System.out.println("===================================================");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+            System.out.print("선택 : ");
+            String menu = scanner.next();
+            if (menu.equals("1")) {
+                System.out.println("글작성");
+                service.write();
+            } else if (menu.equals("2")) {
+                System.out.println("글목록");
+                service.findall();
+                service.find();
+            } else if (menu.equals("3")) {
+                System.out.println("글수정");
+                service.update();
+            } else if (menu.equals("4")) {
+                System.out.println("글삭제");
+                service.delete();
+            } else if (menu.equals("5")) {
+                System.out.println("검색");
+            } else if (menu.equals("0")) {
+                run = false;
+                System.out.println("종료");
+            } else {
+                System.out.println("다시선택");
+            }
         }
     }
 }
