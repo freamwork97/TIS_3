@@ -14,7 +14,6 @@ public class Main {
 
         while (run) {
             System.out.println("=============회원관리=============");
-
             System.out.println("1.회원가입 2.로그인 3.회원목록 4.회원수정");
             System.out.println("5.회원탈퇴 6.로그아웃 0. 종료");
             System.out.println("=================================");
