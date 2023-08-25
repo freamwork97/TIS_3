@@ -39,8 +39,8 @@ public class Reposit {
     }
 
     public DTO update(String passwd) {
-        for (DTO dto:DTOList){
-            if(passwd.equals(dto.getPasswd())){
+        for (DTO dto : DTOList) {
+            if (passwd.equals(dto.getPasswd())) {
                 return dto;
             }
         }
@@ -48,8 +48,8 @@ public class Reposit {
     }
 
     public boolean check(String email) {
-        for (DTO dto: DTOList){
-            if(email.equals(dto.getEmail())){
+        for (DTO dto : DTOList) {
+            if (email.equals(dto.getEmail())) {
                 return false;
             }
         }

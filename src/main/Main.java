@@ -11,14 +11,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Service service = new Service();
         boolean run = true;
-//        boolean member = false;
+
         while (run) {
             System.out.println("=============회원관리=============");
-//            if (!member) {
-//                System.out.println("1.회원가입 2.로그인 0.종료");
-//            } else {
-//                System.out.println("1.회원목록조회 2.회원정보수정 3.회원삭제 4.로그아웃");
-//            }
+
             System.out.println("1.회원가입 2.로그인 3.회원목록 4.회원수정");
             System.out.println("5.회원탈퇴 6.로그아웃 0. 종료");
             System.out.println("=================================");
@@ -26,13 +22,6 @@ public class Main {
             String menu = scanner.next();
 
             if (menu.equals("1")) {
-//                if (!member) {
-//                    System.out.println("회원가입");
-//                    service.save();
-//                } else {
-//                    System.out.println("회원목록조회");
-//                    service.findAll();
-//                }
                 System.out.println("회원가입");
                 service.save();
             } else if (menu.equals("2")) {

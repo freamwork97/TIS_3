@@ -18,7 +18,7 @@ public class Service {
             System.out.print("이메일 : ");
             email = scanner.next();
             boolean check = reposit.check(email);
-            if (check==false) {
+            if (check == false) {
                 System.out.println("이미 사용중입니다");
             } else {
                 break;
