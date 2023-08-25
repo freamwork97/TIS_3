@@ -1,6 +1,5 @@
 package main;
 
-
 import service.Service;
 
 import java.util.Scanner;
